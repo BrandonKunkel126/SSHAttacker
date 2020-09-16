@@ -33,7 +33,7 @@ def sshConnect(password):
 	
 	# Attempt connection with user supplied creds (called iteratively)
 	try: 
-		ssh.connect(target, port=int(float(port)), username=user, password=password)
+		ssh.connect(target, port=int(float(port)), username=user, password=password, key_filename='./rsa_id')
 
 	# Catch bad creds
 	except paramiko.AuthenticationException:
